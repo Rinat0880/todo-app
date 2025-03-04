@@ -53,8 +53,10 @@ main.container {
 }
 
 /* Task item */
-.task-item {
-  background-color: white;
+.task-item { 
+  background-color: #e8f5e9;
+  border-left: 4px solid #27ae60;
+  border-bottom: 4px solid #27ae60;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 4px;
@@ -65,8 +67,9 @@ main.container {
 }
 
 .task-item.completed {
-  background-color: #e8f5e9;
-  border-left: 4px solid #27ae60;
+  background-color: rgb(194, 188, 188);
+  border-left: 4px solid #555454;
+  border-bottom: 4px solid #555454;
 }
 
 .task-content h3 {

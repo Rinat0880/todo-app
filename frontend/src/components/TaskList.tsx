@@ -37,6 +37,13 @@ const TaskList: React.FC = () => {
     }
   };
 
+  const handleComplete = (completedTask: Task) => {
+    // Update the task in the list with the completed task
+    setTasks(tasks.map(task => 
+      task.id === completedTask.id ? completedTask : task
+    ));
+  };
+
   if (loading) return <div>Loading tasks...</div>;
   if (error) return <div className="error">{error}</div>;
 
@@ -51,7 +58,8 @@ const TaskList: React.FC = () => {
           <TaskItem 
             key={task.id} 
             task={task} 
-            onDelete={() => handleDelete(task.id)} 
+            onDelete={() => handleDelete(task.id)}
+            onComplete={handleComplete}
           />
         ))
       )}
