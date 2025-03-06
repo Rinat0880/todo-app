@@ -13,7 +13,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete, onComplete }) => {
   const [isUpdating, setIsUpdating] = useState(false);
 
   // Форматирование даты
-  const formatDate = (dateString?: string) => {
+  const formatDate = (dateString: string | null) => {
     if (!dateString) return 'No due date';
     return new Date(dateString).toLocaleString();
   };

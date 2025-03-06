@@ -9,8 +9,13 @@ const TaskForm: React.FC = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data: TaskCreate) => {
+    const formattedData = {
+      ...data,
+      due_date: data.due_date ? new Date(data.due_date).toISOString() : null, 
+    };
+
     try {
-      await createTask(data);
+      await createTask(formattedData);
       navigate('/');  // Перенаправляем на список задач после создания
     } catch (error) {
       console.error('Failed to create task:', error);
